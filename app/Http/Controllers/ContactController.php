@@ -13,7 +13,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('contacts.index.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contacts.create.index');
     }
 
     /**
@@ -45,7 +45,7 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('contacts.show.index');
     }
 
     /**
@@ -56,7 +56,7 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('contacts.edit.index');
     }
 
     /**

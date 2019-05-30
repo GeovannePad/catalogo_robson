@@ -1,0 +1,43 @@
+@extends('layouts.app')
+
+@section('content')
+
+  <div class="container">
+    <form method="POST" action="">
+
+      <div class="form-group row">
+        <label for="inputName">Nome do produto</label>
+        <input type="text" class="form-control" name="inputName" id="inputName">
+      </div>
+      
+      <div class="form-group row">
+        <label for="inputValue">Valor do produto</label>
+        <input type="number" name="inputValue" id="inputValue" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputDescription">Descrição do produto</label>
+        <textarea class="form-control" name="inputDescription" id="inputDescription" rows="3"></textarea>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputCategory">Categoria do produto</label>
+        <select class="form-control" name="inputCategory" id="inputCategory">
+          
+        </select>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputImage">Imagem do produto</label>
+        <input type="file" name="inputImage" id="inputImage" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <div class="">
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+@endsection
