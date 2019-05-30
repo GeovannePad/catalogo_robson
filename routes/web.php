@@ -23,7 +23,7 @@ Route::group(['prefix' => 'product'], function () {
 
     Route::get('index', 'ProductController@index')->name('indexProduct');
     Route::get('show', 'ProductController@show')->name('showProduct');
-    Route::get('destroy', 'ProductController@destroy')->name('destroyProduct');
+    Route::get('destroy/{id}', 'ProductController@destroy')->name('destroyProduct');
 
     Route::get('create', 'ProductController@create')->name('createProduct');
     Route::post('store', 'ProductController@store')->name('storeProduct');

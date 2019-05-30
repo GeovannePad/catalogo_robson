@@ -3,7 +3,8 @@
 @section('content')
 
   <div class="container">
-    <form method="POST" action="">
+    <form method="POST" action="{{ route('storeProduct') }}">
+      @csrf
 
       <div class="form-group row">
         <label for="inputName">Nome do produto</label>
@@ -12,7 +13,7 @@
       
       <div class="form-group row">
         <label for="inputValue">Valor do produto</label>
-        <input type="number" name="inputValue" id="inputValue" class="form-control">
+        <input type="number" step="0.01" name="inputValue" id="inputValue" class="form-control">
       </div>
 
       <div class="form-group row">
@@ -20,7 +21,7 @@
         <textarea class="form-control" name="inputDescription" id="inputDescription" rows="3"></textarea>
       </div>
 
-      <div class="form-group row">
+      {{-- <div class="form-group row">
         <label for="inputCategory">Categoria do produto</label>
         <select class="form-control" name="inputCategory" id="inputCategory">
           
@@ -30,7 +31,7 @@
       <div class="form-group row">
         <label for="inputImage">Imagem do produto</label>
         <input type="file" name="inputImage" id="inputImage" class="form-control">
-      </div>
+      </div> --}}
 
       <div class="form-group row">
         <div class="">
