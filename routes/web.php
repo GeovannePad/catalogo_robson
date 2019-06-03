@@ -28,8 +28,8 @@ Route::group(['prefix' => 'product'], function () {
     Route::get('create', 'ProductController@create')->name('createProduct');
     Route::post('store', 'ProductController@store')->name('storeProduct');
 
-    Route::get('edit', 'ProductController@edit')->name('editProduct');
-    Route::post('update', 'ProductController@update')->name('updateProduct');
+    Route::get('edit/{id}', 'ProductController@edit')->name('editProduct');
+    Route::post('update/{id}', 'ProductController@update')->name('updateProduct');
 
 });
 
