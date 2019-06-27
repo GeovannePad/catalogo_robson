@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use Illuminate\Http\File;
 
 class ProductController extends Controller
 {
@@ -94,6 +95,11 @@ class ProductController extends Controller
         $imageName = "$request->inputName" . time() . '.' . $request->inputImage->getClientOriginalExtension();
         $request->inputImage->move(public_path('images'), $imageName);
 
+        $image_path = "images/$product->image";
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
+
         $product->image = $imageName;
         $product->name = $request->inputName;
         $product->value = $request->inputValue;
@@ -113,6 +119,13 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        $product = Product::find($id);
+
+        $image_path = "images/$product->image";
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
+
         Product::destroy($id);
         return redirect()->route('indexProduct');
     }
