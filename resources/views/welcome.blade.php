@@ -6,7 +6,7 @@
         @foreach ($products as $product)
             <div class="col-md-4 col-lg-4">
                 <div class="card mt-3 mb-3" style="width: 18rem; height: 25rem">
-                    <img src="images/{{$product->image}}" class="card-img-top" style="height: 150px; width: 100%" alt="olokinho">
+                    <img src="images/{{$product->image}}" class="card-img-top" style="height: 180px; width: 100%" alt="olokinho">
                     <div class="card-body">
                         <h5 class="card-title">{{$product->name}}</h5>
                         <div class="card-text">

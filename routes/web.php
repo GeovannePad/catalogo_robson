@@ -40,8 +40,8 @@ Route::group(['prefix' => 'category'], function () {
     Route::get('create', 'CategoryController@create')->name('createCategory');
     Route::post('store', 'CategoryController@store')->name('storeCategory');
 
-    Route::get('edit', 'CategoryController@edit')->name('editCategory');
-    Route::post('update', 'CategoryController@update')->name('updateCategory');
+    Route::get('edit/{id}', 'CategoryController@edit')->name('editCategory');
+    Route::post('update/{id}', 'CategoryController@update')->name('updateCategory');
 
 });
 

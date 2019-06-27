@@ -63,7 +63,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('categories.edit.index');
+        $category = Category::find($id);
+        return view('categories.edit.index', ['category'=>$category]);
     }
 
     /**
@@ -75,7 +76,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->name = $request->inputName;
+
+        $category->save();
+
+        return redirect()->route('indexCategory');
     }
 
     /**

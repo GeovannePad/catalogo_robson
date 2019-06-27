@@ -48,7 +48,7 @@ class ProductController extends Controller
         $product->name = $request->inputName;
         $product->value = $request->inputValue;
         $product->description = $request->inputDescription;
-        $product->categorie_id = $request->inputCategory;
+        $product->category_id = $request->inputCategory;
 
         $product->save();
 
@@ -74,8 +74,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        $categories = Category::all();
         $product = Product::find($id);
-        return view('products.edit.index', ['product'=>$product]);
+        return view('products.edit.index', ['product'=>$product, 'categories'=>$categories]);
     }
 
     /**
@@ -89,10 +90,15 @@ class ProductController extends Controller
     {
 
         $product = Product::find($id);
-        $product->name = $request->inputName;
 
+        $imageName = "$request->inputName" . time() . '.' . $request->inputImage->getClientOriginalExtension();
+        $request->inputImage->move(public_path('images'), $imageName);
+
+        $product->image = $imageName;
+        $product->name = $request->inputName;
         $product->value = $request->inputValue;
         $product->description = $request->inputDescription;
+        $product->category_id = $request->inputCategory;
 
         $product->save();
 
