@@ -33,5 +33,6 @@
       @endforeach
     </tbody>
   </table>
+  <a role="button" href="{{ route('createProduct') }}" class="btn btn-success">Novo produto</a>
 </div>
 @endsection

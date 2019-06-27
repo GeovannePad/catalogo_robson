@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 
 class ProductController extends Controller
 {
@@ -25,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create.index');
+        $categories = Category::all();
+        return view('products.create.index', ['categories'=>$categories]);
     }
 
     /**
@@ -38,10 +40,15 @@ class ProductController extends Controller
     {
         $product = new Product();
 
+        $imageName = "$request->inputName" . time() . '.' . $request->inputImage->getClientOriginalExtension();
+
+        $request->inputImage->move(public_path('images'), $imageName);
+
+        $product->image = $imageName;
         $product->name = $request->inputName;
         $product->value = $request->inputValue;
         $product->description = $request->inputDescription;
-        // $product->category = $request->category;
+        $product->categorie_id = $request->inputCategory;
 
         $product->save();
 

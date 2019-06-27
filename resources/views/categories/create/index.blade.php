@@ -2,10 +2,12 @@
 
 @section('content')
   <div class="container">
-    <form method="POST" action="">
+    <form method="POST" action="{{route('storeCategory')}}">
       
+      @csrf
+
       <div class="form-group row">
-        <label for="inputName" class="">Nome da categoria</label>
+        <label for="inputName">Nome da categoria</label>
         <input type="text" class="form-control" name="inputName" id="inputName">
       </div>
       
