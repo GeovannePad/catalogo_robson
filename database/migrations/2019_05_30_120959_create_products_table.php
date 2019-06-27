@@ -19,8 +19,8 @@ class CreateProductsTable extends Migration
             $table->float('value', 5, 2);
             $table->string('description', 120);
             $table->string('image', 60)->nullable();
-            $table->bigInteger('categorie_id')->unsigned();
-            $table->foreign('categorie_id')->references('id')->on('categories');
+            $table->bigInteger('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

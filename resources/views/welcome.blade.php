@@ -11,7 +11,7 @@
                         <h5 class="card-title">{{$product->name}}</h5>
                         <div class="card-text">
                             <p><b>Valor:</b> R${{$product->value}}</p>
-                            <p><b>Categoria:</b> {{$product->categorie_id}}</p>
+                            <p><b>Categoria:</b> {{$product->category_id}}</p>
                             <p><b>Descrição do produto:</b> {{$product->description}}</p>
                         </div>
                     </div>

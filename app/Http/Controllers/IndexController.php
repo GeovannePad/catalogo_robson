@@ -12,8 +12,8 @@ class IndexController extends Controller
     {
         $products = Product::all();
         foreach ($products as $product) {
-            $category = Category::find($product->categorie_id);
-            $product->categorie_id = $category->name;
+            $category = Category::find($product->category_id);
+            $product->category_id = $category->name;
         }
         return view('welcome', ['products'=>$products]);
     }
